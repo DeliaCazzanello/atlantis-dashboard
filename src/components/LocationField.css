@@ -1,0 +1,41 @@
+.c-location {
+  position: relative;
+}
+
+/* Sugerencias bajo el campo, con el mismo aspecto que el menú "···" */
+.c-location__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
+  z-index: 30;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-pop);
+  list-style: none;
+}
+
+.c-location__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.c-location__option svg {
+  flex-shrink: 0;
+  color: var(--color-blue);
+}
+
+.c-location__option:hover,
+.c-location__option.is-active {
+  background: var(--color-bg);
+}

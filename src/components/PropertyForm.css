@@ -1,0 +1,349 @@
+.c-property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cada sección es una tarjeta blanca sobre el fondo gris del modal */
+.c-property-form__section {
+  min-width: 0;
+  margin: 0;
+  padding: 14px 16px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.c-property-form__legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  float: left; /* saca la leyenda del borde del fieldset y la deja como título interno */
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 0;
+  color: var(--color-navy);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.c-property-form__legend svg {
+  color: var(--color-blue);
+}
+
+.c-property-form__grid {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.c-property-form__wide {
+  grid-column: 1 / -1;
+}
+
+.c-property-form__trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+/* Campos rellenos en gris suave: menos blanco y más contraste con la tarjeta */
+.c-property-form .o-field__input {
+  height: 44px;
+  border-color: transparent;
+  background: var(--color-bg);
+}
+
+.c-property-form .o-field__input:hover {
+  border-color: var(--color-border);
+}
+
+.c-property-form .o-field__input:focus {
+  background: var(--color-surface);
+}
+
+.c-property-form__textarea {
+  height: auto !important;
+  min-height: 84px;
+  padding: 10px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.c-property-form__money {
+  padding-left: 28px;
+  font-weight: 700;
+}
+
+.c-property-form__prefix {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.c-property-form__suffix {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Selector de operación tipo "pastillas" */
+.c-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--color-bg);
+}
+
+.c-segmented__option {
+  display: grid;
+  place-items: center;
+  height: 36px;
+  border-radius: 9px;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.c-segmented__option:hover {
+  color: var(--color-ink);
+}
+
+.c-segmented__option.is-active {
+  background: var(--color-navy);
+  color: #fff;
+  box-shadow: 0 6px 14px -6px rgba(0, 35, 105, 0.6);
+}
+
+.c-segmented__option:focus-within {
+  outline: 3px solid rgba(150, 210, 40, 0.6);
+  outline-offset: 1px;
+}
+
+/* Fotos */
+.c-property-form__photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 12px;
+  border: 1.5px dashed var(--color-border);
+  border-radius: 16px;
+  list-style: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Zona de soltar: se marca mientras se arrastran fotos encima */
+.c-property-form__photos.is-dragging {
+  border-color: var(--color-blue);
+  background: var(--color-navy-soft);
+}
+
+.c-property-form__photo {
+  position: relative;
+  width: 92px;
+  height: 92px;
+}
+
+.c-property-form__photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.c-property-form__cover {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--color-lime);
+  color: var(--color-navy);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.c-property-form__remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(14, 21, 37, 0.65);
+  color: #fff;
+  cursor: pointer;
+}
+
+.c-property-form__add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 92px;
+  height: 92px;
+  border: 1.5px dashed #b9c6e4;
+  border-radius: 12px;
+  background: var(--color-navy-soft);
+  color: var(--color-navy);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.c-property-form__add:hover,
+.c-property-form__add:focus-within {
+  border-color: var(--color-blue);
+  background: #dfe8fb;
+}
+
+.c-property-form__hint {
+  margin: 10px 0 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .c-property-form__grid,
+  .c-property-form__trio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Propietario: búsqueda, alta rápida y propietario elegido */
+.c-owner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c-owner--selected {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--color-navy-soft);
+}
+
+.c-owner__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.c-owner__info .o-thumb__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.c-owner__new {
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-lime);
+  color: var(--color-navy);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.c-owner__change {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border: 1px solid #c9d6f2;
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-navy);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c-owner__results {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  list-style: none;
+}
+
+.c-owner__result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.c-owner__result:hover,
+.c-owner__result:focus-visible {
+  background: var(--color-bg);
+}
+
+.c-owner__result .o-avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 11px;
+}
+
+.c-owner__empty {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.c-owner__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.c-owner__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-blue);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c-owner__link:hover {
+  text-decoration: underline;
+}
+
+.c-owner__use {
+  height: 38px;
+  font-size: 13px;
+}

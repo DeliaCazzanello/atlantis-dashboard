@@ -1,0 +1,67 @@
+.c-action-menu__toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.15s var(--ease);
+}
+
+.c-action-menu__toggle:hover,
+.c-action-menu__toggle[aria-expanded='true'] {
+  background: var(--color-bg);
+}
+
+.c-action-menu__list {
+  position: fixed;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-pop);
+  animation: c-action-menu-in 0.15s var(--ease);
+}
+
+.c-action-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.c-action-menu__item:hover {
+  background: var(--color-bg);
+}
+
+.c-action-menu__item--danger {
+  color: var(--color-danger);
+}
+
+.c-action-menu__item--danger:hover {
+  background: #fdecea;
+}
+
+@keyframes c-action-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}

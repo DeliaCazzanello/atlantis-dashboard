@@ -1,0 +1,179 @@
+.c-prop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.c-prop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.c-prop:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.c-prop__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.c-prop__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+
+.c-prop:hover .c-prop__img {
+  transform: scale(1.04);
+}
+
+.c-prop__status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  box-shadow: 0 4px 12px rgba(14, 21, 37, 0.15);
+}
+
+.c-prop__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+}
+
+.c-prop__prices {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-prop__prices li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.c-prop__prices li:first-child strong {
+  color: var(--color-ink);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.c-prop__prices strong {
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.c-prop__title {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Toda la tarjeta lleva al detalle: el ::after del enlace la cubre */
+.c-prop__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.c-prop__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.c-prop:has(.c-prop__link:focus-visible) {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.c-prop__place {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.c-prop__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--color-border);
+  list-style: none;
+}
+
+.c-prop__specs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.c-prop__type {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(14, 21, 37, 0.55);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Menú "···" sobre la foto */
+.c-prop__menu {
+  position: absolute;
+  z-index: 1; /* por encima del enlace que cubre la tarjeta */
+  top: 10px;
+  right: 10px;
+}
+
+.c-prop__menu .c-action-menu__toggle {
+  border: 0;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 12px rgba(14, 21, 37, 0.18);
+}
+
+/* Inmueble inactivo: atenuado, pero se puede abrir su menú para reactivarlo */
+.c-prop.is-inactive .c-prop__img {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.c-prop.is-inactive .c-prop__body {
+  opacity: 0.6;
+}
+
+.c-prop-failure {
+  margin-bottom: 16px;
+}

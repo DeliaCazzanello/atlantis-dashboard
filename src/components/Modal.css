@@ -1,0 +1,143 @@
+/* Fondo desenfocado con tinte navy */
+.c-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(0, 20, 61, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: c-modal-fade 0.2s ease-out;
+}
+
+/* Panel: cabecera navy fija, cuerpo gris con scroll y pie fijo */
+.c-modal__panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100vh - 32px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--color-bg);
+  box-shadow: 0 40px 100px -24px rgba(0, 20, 61, 0.6);
+  animation: c-modal-in 0.28s var(--ease);
+}
+
+.c-modal__panel--md { max-width: 680px; }
+.c-modal__panel--sm { max-width: 440px; }
+
+/* Cabecera con la misma piel que la barra lateral y la KPI destacada */
+.c-modal__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 18px 20px;
+  background:
+    radial-gradient(80% 160% at 100% 0%, rgba(150, 210, 40, 0.3), transparent 60%),
+    linear-gradient(135deg, var(--color-navy) 0%, #0b3a9c 100%);
+  color: #fff;
+}
+
+.c-modal__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-lime);
+}
+
+.c-modal__heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-modal__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.c-modal__subtitle {
+  margin: 2px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.c-modal__close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.c-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.c-modal__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.c-modal__foot {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+/* Formularios dentro del modal: ocupan el alto disponible para que el cuerpo tenga scroll */
+.c-modal__panel > form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.c-modal__foot .o-btn {
+  height: 42px;
+}
+
+@keyframes c-modal-fade {
+  from { opacity: 0; }
+}
+
+@keyframes c-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+@media (max-width: 560px) {
+  .c-modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  /* En móvil sale desde abajo como hoja */
+  .c-modal__panel {
+    max-height: 92vh;
+    border-radius: 22px 22px 0 0;
+  }
+}

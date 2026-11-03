@@ -1,0 +1,46 @@
+/* Confirmación dentro de un modal: resumen de lo que se toca y aviso */
+.c-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.c-confirm__summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+}
+
+.c-confirm__summary > div {
+  min-width: 0;
+}
+
+.c-confirm__warning {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fdecea;
+  color: #a1281f;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.c-confirm__warning svg {
+  flex-shrink: 0;
+}
+
+.c-confirm__warning.is-blocked {
+  background: var(--color-warning-soft);
+  color: #8a4a05;
+}
+
+.c-confirm__summary .o-thumb > div {
+  min-width: 0;
+}

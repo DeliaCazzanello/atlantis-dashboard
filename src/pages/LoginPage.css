@@ -1,0 +1,73 @@
+.c-login {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 100vh;
+}
+
+.c-login__brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  background:
+    linear-gradient(180deg, rgba(0, 20, 61, 0.35) 0%, rgba(0, 20, 61, 0.92) 100%),
+    var(--login-photo) center / cover;
+  color: #fff;
+}
+
+.c-login__logo {
+  width: 140px;
+  filter: brightness(0) invert(1);
+}
+
+.c-login__headline {
+  max-width: 520px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.c-login__lead {
+  margin: 14px 0 0;
+  color: var(--color-lime);
+  font-weight: 700;
+}
+
+.c-login__panel {
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.c-login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.c-login__form .o-field__input {
+  height: 48px;
+  padding-right: 14px;
+}
+
+.c-login__error {
+  margin: 0;
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .c-login {
+    grid-template-columns: 1fr;
+  }
+
+  .c-login__brand {
+    gap: 40px;
+    padding: 28px 20px;
+  }
+}

@@ -260,43 +260,43 @@
   "supabase/migrations/20261101140000_rls_modulo_asesores.sql": {
     "mtime": 1793581222.601143,
     "seen": 1793676534.4032743,
-    "ast_hash": "76b147cdf5c311b05ce44be1a87b8314",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261101150000_registro_inmuebles.sql": {
     "mtime": 1793579037.404196,
     "seen": 1793676534.4032812,
-    "ast_hash": "43c4280a7287e74aedc473642fa035ca",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261101160000_cartera_clientes.sql": {
     "mtime": 1793581222.6037245,
     "seen": 1793676534.403288,
-    "ast_hash": "91443a13dfa957b0ec2c853e0d3ee033",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261101170000_clientes_sin_cuenta.sql": {
     "mtime": 1793581258.1221972,
     "seen": 1793676534.4032946,
-    "ast_hash": "1fe8b2679cef3b3459c0a3e1eca1d797",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261102120000_inmuebles_inactivos.sql": {
     "mtime": 1793619858.2055793,
     "seen": 1793676534.4033008,
-    "ast_hash": "7a8ebd02f4e7c192168e99074922f5a2",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261102130000_metros_decimales.sql": {
     "mtime": 1793668287.4311461,
     "seen": 1793676534.4033074,
-    "ast_hash": "d3563b96c572774e3872d786a10dde74",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "supabase/migrations/20261102140000_metros_opcionales.sql": {
     "mtime": 1793669916.9518106,
     "seen": 1793676534.403314,
-    "ast_hash": "2bcc64e05638e0a4b63b4fc3b00ad13e",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "README.md": {
